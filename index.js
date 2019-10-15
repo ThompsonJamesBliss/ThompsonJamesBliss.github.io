@@ -21,7 +21,7 @@ const demo = async () => {
   // Warmup the model. This isn't necessary, but makes the first prediction
   // faster. Call `dispose` to release the WebGL memory allocated for the return
   // value of `predict`.
-  my_model.predict(tf.zeros([NULL, 150, 150, 3])).dispose();
+  my_model.predict(tf.zeros([1, 192, 192, 3])).dispose();
 
   status('');
 
