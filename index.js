@@ -9,7 +9,7 @@ CLASSES = {
 const MODEL_PATH =
     'model.json';
 
-const IMAGE_SIZE = 192;
+const IMAGE_SIZE = 150;
 const TOPK_PREDICTIONS = 5;
 
 let my_model;
@@ -21,7 +21,7 @@ const demo = async () => {
   // Warmup the model. This isn't necessary, but makes the first prediction
   // faster. Call `dispose` to release the WebGL memory allocated for the return
   // value of `predict`.
-  my_model.predict(tf.zeros([1, IMAGE_SIZE, IMAGE_SIZE, 3])).dispose();
+  my_model.predict(tf.zeros([NULL, 150, 150, 3])).dispose();
 
   status('');
 
