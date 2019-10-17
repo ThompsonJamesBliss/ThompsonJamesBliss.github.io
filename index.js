@@ -1,8 +1,19 @@
 CLASSES = {
-  0: 'class0',
-  1: 'class1',
-  2: 'class2',
+  0: 'Explorer',
+  1: 'Lion',
+  2: 'Uris_Sculpture',
 };
+
+
+function sum(input){
+                   
+            var total =  0;
+            for(var i=0;i<input.length;i++)
+              {                  
+                  total += Number(input[i]);
+               }
+             return total;
+            }
 
 const MODEL_PATH =
     'model.json';
@@ -106,7 +117,7 @@ async function getTopKClasses(logits, topK) {
   for (let i = 0; i < topkIndices.length; i++) {
     topClassesAndProbs.push({
       className: CLASSES[topkIndices[i]],
-      probability: topkValues[i]
+      probability: topkValues[i]/sum(topkValues)
     })
   }
   return topClassesAndProbs;
